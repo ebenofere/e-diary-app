@@ -1,7 +1,17 @@
 import React from "react";
 
+import "./CourseGoalItem.css";
+
 const CourseGoalItem = (props) => {
-  return <li className="goal-item">{props.children}</li>;
+  const deleteHandler = () => {
+    props.onDelete(props.id);
+  };
+
+  return (
+    <li className="goal-item" onClick={deleteHandler}>
+      {props.children}
+    </li>
+  );
 };
 
 export default CourseGoalItem;
